@@ -9,7 +9,7 @@
             <div class="card">
                 <img class="card-img-top" src="https://www.volvotrucks.id/content/dam/volvo-trucks/markets/master/home/services-updates/driver-support/services-driver-support-driver.jpg" alt="Card image cap" style="width: 450px; height: 300px;object-fit: cover;" />
                 <div class="card-body">
-                    <h5 class="card-title">Driver</h5>
+                    <h5 class="card-title">{{ $chosen_driver->fullname }}</h5>
                     <!-- <p class="card-text">
                         This is a wider card with supporting text below as a natural lead-in to additional content. This
                         content is a little bit longer.
@@ -22,10 +22,10 @@
             <div class="card">
                 <img class="card-img-top" src="https://www.toyota.astra.co.id/sites/default/files/2022-12/home%20banner%20supra%20gr%201293x820_0.jpg" alt="Card image cap" style="width: 450px; height: 300px;object-fit: cover;" />
                 <div class="card-body">
-                    <h5 class="card-title">Toyota</h5>
-                    <p class="card-text">
-                        Owned by Company
-                    </p>
+                    <h5 class="card-title">{{ $chosen_vehicle->name }}</h5>
+                    <p class="card-text">{{ $chosen_vehicle->fuel_consume }}l / km</p>
+                    <p class="card-text">{{ $chosen_vehicle->vehicle_ownership == 0 ? 'Owned Company' : 'Rent Company' }}</p>
+                    <p class="card-text">Service : {{ $chosen_vehicle->service_schedule }}</p>
                 </div>
                 <!-- <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>

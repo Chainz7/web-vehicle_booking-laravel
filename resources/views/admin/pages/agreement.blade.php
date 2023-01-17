@@ -6,6 +6,7 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Agreement</h4>
         <!-- Driver -->
         <div class="col mb-5">
+        @foreach($drivers as $driver)
             <div class="col-md">
                 <div class="card mb-3">
                     <div class="row g-0">
@@ -14,7 +15,7 @@
                         </div>
                         <div class=" col-md-11">
                             <div class="card-body d-flex justify-content-between">
-                                <h5 class="card-title fw-bold">Agreement</h5>
+                                <h5 class="card-title fw-bold">{{ $driver->fullname }}</h5>
                                 <!-- <p class="card-text">
                                     This is a wider card with supporting text below as a natural lead-in to additional content.
                                     This content is a little bit longer.
@@ -26,6 +27,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         <!--/ Driver -->
     </div>

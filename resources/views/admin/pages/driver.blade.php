@@ -6,6 +6,7 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Drivers</h4>
         <!-- Driver -->
         <div class="col mb-5">
+            @foreach($drivers as $driver)
             <div class="col-md">
                 <div class="card mb-3">
                     <div class="row g-0">
@@ -14,18 +15,19 @@
                         </div>
                         <div class=" col-md-11">
                             <div class="card-body d-flex justify-content-between">
-                                <h5 class="card-title fw-bold">Driver</h5>
+                                <h5 class="card-title fw-bold">{{ $driver->fullname }}</h5>
                                 <!-- <p class="card-text">
                                     This is a wider card with supporting text below as a natural lead-in to additional content.
                                     This content is a little bit longer.
                                 </p> -->
                                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                                <button type="button" class="btn btn-primary">Choose</button>
+                                <a href="{{ route('driver.choose', $driver->id) }}" class="btn btn-primary">Choose</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
         <!--/ Driver -->
     </div>
