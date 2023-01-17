@@ -17,7 +17,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="{{ asset('css/') }}"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -32,7 +32,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('css/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,24 +43,24 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="{{ asset('css/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="{{ asset('css/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('css/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('css/css/demo.css') }}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="{{ asset('css/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="{{ asset('css/vendor/js/helpers.js') }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../assets/js/config.js"></script>
+    <script src="{{ asset('css/js/config.js') }}"></script>
   </head>
 
   <body>
@@ -509,7 +509,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ asset('css/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -518,7 +518,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ asset('css/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -581,7 +581,7 @@
               <div class="row mb-5">
                 <div class="col-md-6 col-lg-4 mb-3">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/2.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -597,7 +597,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle text-muted">Support card subtitle</h6>
                     </div>
-                    <img class="img-fluid" src="../assets/img/elements/13.jpg" alt="Card image cap" />
+                    <img class="img-fluid" src="{{ asset('css/img/elements/13.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
                       <a href="javascript:void(0);" class="card-link">Card link</a>
@@ -612,7 +612,7 @@
                       <h6 class="card-subtitle text-muted">Support card subtitle</h6>
                       <img
                         class="img-fluid d-flex mx-auto my-4"
-                        src="../assets/img/elements/4.jpg"
+                        src="{{ asset('css/img/elements/4.jpg') }}"
                         alt="Card image cap"
                       />
                       <p class="card-text">Bear claw sesame snaps gummies chocolate.</p>
@@ -663,7 +663,7 @@
                 <div class="col-md-6 col-lg-4">
                   <h6 class="mt-2 text-muted">Images</h6>
                   <div class="card mb-4">
-                    <img class="card-img-top" src="../assets/img/elements/5.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/5.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <p class="card-text">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
@@ -678,7 +678,7 @@
                 <div class="col-md-6 col-lg-4">
                   <h6 class="mt-2 text-muted">Kitchen sink</h6>
                   <div class="card">
-                    <img class="card-img-top" src="../assets/img/elements/7.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/7.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">Some quick example text to build on the card title.</p>
@@ -779,7 +779,7 @@
               <div class="row mb-5">
                 <div class="col-md-6 col-xl-4">
                   <div class="card mb-3">
-                    <img class="card-img-top" src="../assets/img/elements/18.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/18.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -804,12 +804,12 @@
                         <small class="text-muted">Last updated 3 mins ago</small>
                       </p>
                     </div>
-                    <img class="card-img-bottom" src="../assets/img/elements/1.jpg" alt="Card image cap" />
+                    <img class="card-img-bottom" src="{{ asset('css/img/elements/1.jpg') }}" alt="Card image cap" />
                   </div>
                 </div>
                 <div class="col-md-6 col-xl-4">
                   <div class="card bg-dark border-0 text-white">
-                    <img class="card-img" src="../assets/img/elements/11.jpg" alt="Card image" />
+                    <img class="card-img" src="{{ asset('css/img/elements/11.jpg') }}" alt="Card image" />
                     <div class="card-img-overlay">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -830,7 +830,7 @@
                   <div class="card mb-3">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img class="card-img card-img-left" src="../assets/img/elements/12.jpg" alt="Card image" />
+                        <img class="card-img card-img-left" src="{{ asset('css/img/elements/12.jpg') }}" alt="Card image" />
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
@@ -859,7 +859,7 @@
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <img class="card-img card-img-right" src="../assets/img/elements/17.jpg" alt="Card image" />
+                        <img class="card-img card-img-right" src="{{ asset('css/img/elements/17.jpg') }}" alt="Card image" />
                       </div>
                     </div>
                   </div>
@@ -985,7 +985,7 @@
               <h6 class="pb-1 mb-4 text-muted">Card Groups</h6>
               <div class="card-group mb-5">
                 <div class="card">
-                  <img class="card-img-top" src="../assets/img/elements/4.jpg" alt="Card image cap" />
+                  <img class="card-img-top" src="{{ asset('css/img/elements/4.jpg') }}" alt="Card image cap" />
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">
@@ -998,7 +998,7 @@
                   </div>
                 </div>
                 <div class="card">
-                  <img class="card-img-top" src="../assets/img/elements/5.jpg" alt="Card image cap" />
+                  <img class="card-img-top" src="{{ asset('css/img/elements/5.jpg') }}" alt="Card image cap" />
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">
@@ -1010,7 +1010,7 @@
                   </div>
                 </div>
                 <div class="card">
-                  <img class="card-img-top" src="../assets/img/elements/1.jpg" alt="Card image cap" />
+                  <img class="card-img-top" src="{{ asset('css/img/elements/1.jpg') }}" alt="Card image cap" />
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">
@@ -1029,7 +1029,7 @@
               <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
                 <div class="col">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/2.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1041,7 +1041,7 @@
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/13.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/13.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1053,7 +1053,7 @@
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/4.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/4.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1064,19 +1064,7 @@
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/18.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content.
-                        This content is a little bit longer.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/19.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/18.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1088,7 +1076,19 @@
                 </div>
                 <div class="col">
                   <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/20.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/19.jpg') }}" alt="Card image cap" />
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="{{ asset('css/img/elements/20.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1105,7 +1105,7 @@
               <div class="row" data-masonry='{"percentPosition": true }'>
                 <div class="col-sm-6 col-lg-4 mb-4">
                   <div class="card">
-                    <img class="card-img-top" src="../assets/img/elements/5.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/5.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title that wraps to a new line</h5>
                       <p class="card-text">
@@ -1129,7 +1129,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4 mb-4">
                   <div class="card">
-                    <img class="card-img-top" src="../assets/img/elements/18.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/18.jpg') }}" alt="Card image cap" />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -1162,7 +1162,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4 mb-4">
                   <div class="card">
-                    <img class="card-img-top" src="../assets/img/elements/4.jpg" alt="Card image cap" />
+                    <img class="card-img-top" src="{{ asset('css/img/elements/4.jpg') }}" alt="Card image cap" />
                   </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 mb-4">
@@ -1250,23 +1250,23 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="{{ asset('css/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('css/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('css/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('css/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="{{ asset('css/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/masonry/masonry.js"></script>
+    <script src="{{ asset('css/vendor/libs/masonry/masonry.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+    <script src="{{ asset('css/js/main.js') }}"></script>
 
     <!-- Page JS -->
 
     <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js') }}"></script>
   </body>
 </html>
