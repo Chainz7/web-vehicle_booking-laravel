@@ -8,7 +8,7 @@
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-1">
-                            <img class="card-img card-img-left" src="{{ asset('css/img/elements/12.jpg') }}" alt="Card image" style="width: 110px; height: 87px;object-fit: cover;" />
+                            <img class="card-img card-img-left" src="{{ $driver->profile_picture_url }}" alt="Card image" style="width: 110px; height: 87px;object-fit: cover;" />
                         </div>
                         <div class=" col-md-11">
                             <div class="card-body d-flex justify-content-between">
@@ -27,4 +27,4 @@
             @endforeach
         </div>
     </div>
-@include('admin.foot')
+    @include('admin.foot')

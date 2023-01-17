@@ -1,45 +1,55 @@
 @include('admin.head')
 <div class="content-wrapper">
     <div class="container-xxl container-p-y">
-                    </tbody>
-        <h4 class="fw-bold py-2 m-1 mb-0"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
-    </div>
-    <div class="container-xxl flex-grow-1 container-p-y pt-0">
-        <div class="card">
-            <h5 class="card-header">List Vehicle</h5>
-            <div class="table-responsive text-nowrap">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Ownership</th>
-                        <th>Fuel Consume</th>
-                        <th>Service Schedule</th>
-                        <th>Is Availbale</th>
-                        <th>Booking Count</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                    @foreach($vehicles as $item)
-                    <tr>
-                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>{{ $item->name }}</strong></td>
-                        <td>{{ $item->vehicle_type }}</td>
-                        <td>{{ $item->vehicle_ownership == 1 ? 'Owned' : 'Rent' }}</td>
-                        <td><span class="badge bg-label-primary me-1">{{ $item->fuel_consume }}/Km</span></td>
-                        <td>{{ date_format(date_create($item->service_schedule), 'd M Y') }}</td>
-                        <td>
-                            @if($item->is_available == true)
-                                <span class="badge bg-label-primary me-1">Available</span>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
+        <div class="row mb-5">
+            @foreach($vehicles as $vehicle)
+            <div class="col-6 col-md-4 col-lg-3 mb-3">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ $vehicle->vehicle_picture_url }}" alt="Card image cap" style="width: 400px; height: 200px; object-fit: cover;" />
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>{{ $vehicle->name }}</strong></h5>
+                        <p class="card-text">
+                            Type : <span class="badge bg-label-primary me-1">{{ $vehicle->vehicle_type }}</span>
+                        </p>
+                        <p class="card-text">
+                            Ownership : <span class="badge bg-label-primary me-1">{{ $vehicle->vehicle_ownership == 1 ? 'Owned' : 'Rent' }}</span>
+                        </p>
+                        <p class="card-text">
+                            Fuel Consume : <span class="badge bg-label-primary me-1">{{ $vehicle->fuel_consume }}/Km</span>
+                        </p>
+                        <p class="card-text">
+                            Service Schedule :
+                            @if(date_create($vehicle->service_schedule) < date_create())<span class="badge bg-label-warning me-1">{{ date_format(date_create($vehicle->service_schedule), 'd M Y') }}</span>
+                                @else
+                                <span class="badge bg-label-primary me-1">{{ date_format(date_create($vehicle->service_schedule), 'd M Y') }}</span>
+                                @endif
+                        </p>
+                        <p class="card-text">
+                            Available :
+                            @if($vehicle->is_available == true)
+                            <span class="badge bg-label-primary me-1">YES</span>
+                            @elseif(date_create($vehicle->service_schedule) < date_create()) <span class="badge bg-label-danger me-1">NO || NEED SERVICE</span>
+                                @else
+                                <span class="badge bg-label-danger me-1">NO</span>
+                                @endif
+                        </p>
+                        @if($vehicle->is_available == false)
+                        <a href="{{ route('vehicle.choose', $vehicle->id) }}" class="btn btn-primary disabled">Choose</a>
+                        @elseif(date_create($vehicle->service_schedule) < date_create()) <a href="{{ route('vehicle.choose', $vehicle->id) }}" class="btn btn-primary disabled">Choose</a>
                             @else
-                                <span class="badge bg-label-danger me-1">Not Available</span>
+                            <a href="{{ route('vehicle.choose', $vehicle->id) }}" class="btn btn-primary">Choose</a>
                             @endif
-                        </td>
-                        <td align="center"><strong>{{ $item->booking_count }}</strong></td>
-                    </tr>
-                    @endforeach
-                </table>
+                            <span class="badge bg-label-primary"><strong>{{ $vehicle->booking_count }}</strong> Booked</span>
+                    </div>
+                </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>

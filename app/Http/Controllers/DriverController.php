@@ -15,6 +15,6 @@ class DriverController extends Controller
     public function chooseDriver($id)
     {
         session(['chosen_driver' => $id]);
-        return redirect()->route('monitoring.index');
+        return redirect()->route('approver.index');
     }
 }

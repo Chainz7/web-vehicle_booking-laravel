@@ -7,6 +7,9 @@
           <div class="d-flex align-items-end row">
             <div class="col-sm-7">
               <div class="card-body">
+                @foreach($users as $user)
+                @endforeach
+                <a href="{{ route('dashboard.choose', $user->id) }}" class="btn btn-primary">Choose</a>
                 <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
                 <p class="mb-4">
                   You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in

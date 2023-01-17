@@ -45,7 +45,7 @@
   <div class="menu-inner-shadow"></div>
   <ul class="menu-inner py-1">
     <li class="menu-item">
-      <a href="{{ url('dashboard') }}" class="menu-link">
+      <a href="{{ route('dashboard.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
       </a>
@@ -66,9 +66,9 @@
       </a>
     </li>
     <li class="menu-item">
-      <a href="{{ route('agreement.index') }}" class="menu-link">
+      <a href="{{ route('approver.index') }}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="Basic">Agreement</div>
+        <div data-i18n="Basic">Aprrover</div>
       </a>
     </li>
     <li class="menu-item">

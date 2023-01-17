@@ -2,47 +2,86 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-1"><span class="text-muted fw-light">Pages /</span> Monitoring</h4>
+        {{$chosen_user}}
+        {{$chosen_vehicle}}
+        {{$chosen_driver}}
+        {{$chosen_approver}}
         <h4 class="pb-1 mb-3 fw-bold">On Going</h4>
         <div class="card-group mb-5">
             <div class="card">
-                <img class="card-img-top" src="https://www.volvotrucks.id/content/dam/volvo-trucks/markets/master/home/services-updates/driver-support/services-driver-support-driver.jpg" alt="Card image cap" style="width: 450px; height: 300px;object-fit: cover;" />
+                <img class="card-img-top" src="{{ $chosen_vehicle->vehicle_picture_url }}" style="width: 420px; height: 250px;object-fit: cover;" />
                 <div class="card-body">
-                    <h5 class="card-title">{{ $chosen_driver->fullname }}</h5>
-                    <!-- <p class="card-text">
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This
-                        content is a little bit longer.
-                    </p> -->
+                    <h4 class="card-title"><strong>Vehicle</strong></h4>
+                    <p class="card-text">
+                        <strong>Name: <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->name }}</span></strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>Type : <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->vehicle_type }}</span></strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>Ownership: <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->vehicle_ownership == 0 ? 'Owned' : 'Rent' }}</span></strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>Fuel Consume : <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->fuel_consume }}</span></strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>Service Schedule : <span class="badge bg-label-primary me-1">{{ date_format(date_create($chosen_vehicle->service_schedule), 'd M Y') }}</span></strong>
+                    </p>
                 </div>
-                <!-- <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div> -->
             </div>
             <div class="card">
-                <img class="card-img-top" src="https://www.toyota.astra.co.id/sites/default/files/2022-12/home%20banner%20supra%20gr%201293x820_0.jpg" alt="Card image cap" style="width: 450px; height: 300px;object-fit: cover;" />
+                <img class="card-img-top" src="{{ $chosen_driver->profile_picture_url }}" style="width: 420px; height: 250px;object-fit: cover;" />
                 <div class="card-body">
-                    <h5 class="card-title">{{ $chosen_vehicle->name }}</h5>
-                    <p class="card-text">{{ $chosen_vehicle->fuel_consume }}l / km</p>
-                    <p class="card-text">{{ $chosen_vehicle->vehicle_ownership == 0 ? 'Owned Company' : 'Rent Company' }}</p>
-                    <p class="card-text">Service : {{ $chosen_vehicle->service_schedule }}</p>
+                    <h4 class="card-title"><strong>Driver</strong></h4>
+                    <p class="card-text">
+                        <strong>Name: <span class="badge bg-label-primary me-1">{{ $chosen_driver->fullname }}</span></strong>
+                    </p>
                 </div>
-                <!-- <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div> -->
             </div>
             <div class="card">
-                <img class="card-img-top" src="https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg" alt="Card image cap" style="width: 450px; height: 300px;object-fit: cover;" />
+                <img class="card-img-top" src="{{ $chosen_approver->profile_picture_url }}" alt="Card image cap" style="width: 420px; height: 250px;object-fit: cover;" />
                 <div class="card-body">
-                    <h5 class="card-title">Agreement</h5>
-                    <!-- <p class="card-text">
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This
-                        card has even longer content than the first to show that equal height action.
-                    </p> -->
+                    <h4 class="card-title"><strong>Approver</strong></h4>
+                    <p class="card-text">
+                        <strong>Name: <span class="badge bg-label-primary me-1">{{ $chosen_approver->fullname }}</span></strong>
+                    </p>
                 </div>
-                <!-- <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div> -->
             </div>
         </div>
+
+        <form action="{{route('vehiclebooking.store')}}" method="POST">
+            @csrf
+            <div class="form-group d-none">
+                <label for="vehicle_id">Vehicle ID:</label>
+                <input type="text" class="form-control" name="vehicle_id" id="vehicle_id" value="{{ $chosen_vehicle->id }}" required>
+            </div>
+            <div class="form-group d-none">
+                <label for="approver_id">Approver ID:</label>
+                <input type="text" class="form-control" name="approver_id" id="approver_id" value="{{ $chosen_approver->id }}" required>
+            </div>
+            <div class="form-group d-none">
+                <label for="submitter_id">Submitter ID:</label>
+                <input type="text" class="form-control" name="submitter_id" id="submitter_id" value="{{ $chosen_user->id }}" required>
+            </div>
+            <div class="form-group d-none">
+                <label for="driver_id">Driver ID:</label>
+                <input type="text" class="form-control" name="driver_id" id="driver_id" value="{{ $chosen_driver->id }}" required>
+            </div>
+            <div class="form-group d-none">
+                <label for="booking_date">Booking Date:</label>
+                <input type="date" class="form-control" name="booking_date" id="booking_date" value="{{ date('Y-m-d') }}">
+            </div>
+            <div class="form-group d-none">
+                <label for="status">Status:</label>
+                <input type="number" class="form-control" name="status" id="status" value="Pending" required>
+            </div>
+            <div class="form-group d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary mb-5">Submit</button>
+            </div>
+        </form>
+
+
+
         <h4 class="pb-1 mb-3 fw-bold">My Activity</h4>
         <!-- Driver -->
         <div class="card">
@@ -81,4 +120,4 @@
             </div>
         </div>
     </div>
-@include('admin.foot')
+    @include('admin.foot')
