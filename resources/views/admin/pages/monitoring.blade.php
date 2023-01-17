@@ -1,7 +1,5 @@
-@include('admin/head')
-<!-- Content wrapper -->
+@include('admin.head')
 <div class="content-wrapper">
-    <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-1"><span class="text-muted fw-light">Pages /</span> Monitoring</h4>
         <h4 class="pb-1 mb-3 fw-bold">On Going</h4>
@@ -82,7 +80,5 @@
                 </table>
             </div>
         </div>
-        <!--/ Driver -->
     </div>
-    <!-- / Content -->
-    @include('admin/foot')
+@include('admin.foot')

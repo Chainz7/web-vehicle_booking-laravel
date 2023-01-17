@@ -1,12 +1,7 @@
-@include('admin/head')
-<!-- Content wrapper -->
+@include('admin.head')
 <div class="content-wrapper">
-  <!-- Content -->
-
   <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
-
-    <!-- Grid Card -->
     <h3 class="pb-1 mb-4 fw-bold d-flex justify-content-center">Category</h3>
     <div class="d-flex justify-content-center mb-5">
       <button type="button" class="btn btn-primary active mx-2">Owned</button>
@@ -36,7 +31,5 @@
       </div>
       @endforeach
     </div>
-    <!--/ Card layout -->
   </div>
-  <!-- / Content -->
-  @include('admin/foot')
+@include('admin.foot')

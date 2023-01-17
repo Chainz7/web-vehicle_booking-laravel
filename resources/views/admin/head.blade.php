@@ -101,11 +101,12 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-        @include('admin/aside')
+        @include('admin.aside')
         <!-- / Menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Navbar -->
-          @include('admin/navbar')
-          <!-- / Navbar -->
+        @include('admin.navbar')
+        <!--  / Navbar -->
+

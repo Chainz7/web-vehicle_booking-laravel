@@ -1,10 +1,7 @@
-@include('admin/head')
-<!-- Content wrapper -->
+@include('admin.head')
 <div class="content-wrapper">
-    <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Drivers</h4>
-        <!-- Driver -->
         <div class="col mb-5">
             @foreach($drivers as $driver)
             <div class="col-md">
@@ -29,7 +26,5 @@
             </div>
             @endforeach
         </div>
-        <!--/ Driver -->
     </div>
-    <!-- / Content -->
-    @include('admin/foot')
+@include('admin.foot')
