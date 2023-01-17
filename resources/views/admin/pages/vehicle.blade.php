@@ -1,35 +1,46 @@
 @include('admin.head')
 <div class="content-wrapper">
-  <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
-    <h3 class="pb-1 mb-4 fw-bold d-flex justify-content-center">Category</h3>
-    <div class="d-flex justify-content-center mb-5">
-      <button type="button" class="btn btn-primary active mx-2">Owned</button>
-      <button type="button" class="btn btn-primary mx-2">Rent</button>
+    <div class="container-xxl container-p-y">
+                    </tbody>
+        <h4 class="fw-bold py-2 m-1 mb-0"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
-      @foreach($vehicles as $vehicle)
-      <div class="col">
-        <div class="card h-100">
-          <img class="card-img-top" src="{{ asset('css/img/elements/2.jpg') }}" alt="Card image cap" style="width: 300px; height: 300px;object-fit: cover;" />
-          <div class="card-body">
-            <div class="card text-center mb-3" style="box-shadow: none;">
-              <div class="card-body">
-                <h5 class="card-title">{{ $vehicle->name }}</h5>
-                <p class="card-text">{{ $vehicle->fuel_consume }}l / km</p>
-                <p class="card-text">{{ $vehicle->vehicle_ownership == 0 ? 'Owned Company' : 'Rent Company' }}</p>
-                <p class="card-text">Service : {{ $vehicle->service_schedule }}</p>
-                <!-- <a href="javascript:void(0)" class="btn btn-primary">Choose</a> -->
-                <a href="{{ route('vehicle.choose', $vehicle->id) }}" class="btn btn-{{ $vehicle->is_available == 1 ? 'primary' : 'danger' }}" {{ $vehicle->is_available == 0 ? 'disabled' : '' }}>
-                  {{ $vehicle->is_available == 1 ? 'Choose' : 'Not Available' }}
-                </a>
-              </div>
+    <div class="container-xxl flex-grow-1 container-p-y pt-0">
+        <div class="card">
+            <h5 class="card-header">List Vehicle</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Ownership</th>
+                        <th>Fuel Consume</th>
+                        <th>Service Schedule</th>
+                        <th>Is Availbale</th>
+                        <th>Booking Count</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                    @foreach($vehicles as $item)
+                    <tr>
+                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>{{ $item->name }}</strong></td>
+                        <td>{{ $item->vehicle_type }}</td>
+                        <td>{{ $item->vehicle_ownership == 1 ? 'Owned' : 'Rent' }}</td>
+                        <td><span class="badge bg-label-primary me-1">{{ $item->fuel_consume }}/Km</span></td>
+                        <td>{{ date_format(date_create($item->service_schedule), 'd M Y') }}</td>
+                        <td>
+                            @if($item->is_available == true)
+                                <span class="badge bg-label-primary me-1">Available</span>
+                            @else
+                                <span class="badge bg-label-danger me-1">Not Available</span>
+                            @endif
+                        </td>
+                        <td align="center"><strong>{{ $item->booking_count }}</strong></td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
-            </p>
-          </div>
         </div>
-      </div>
-      @endforeach
     </div>
-  </div>
+</div>
 @include('admin.foot')
