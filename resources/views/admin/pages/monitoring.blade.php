@@ -1,12 +1,11 @@
 @include('admin.head')
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-1"><span class="text-muted fw-light">Pages /</span> Monitoring</h4>
-        {{$chosen_user}}
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Monitoring</h4>
+        <!-- {{$chosen_user}}
         {{$chosen_vehicle}}
         {{$chosen_driver}}
-        {{$chosen_approver}}
-        <h4 class="pb-1 mb-3 fw-bold">On Going</h4>
+        {{$chosen_approver}} -->
         <div class="card-group mb-5">
             <div class="card">
                 <img class="card-img-top" src="{{ $chosen_vehicle->vehicle_picture_url }}" style="width: 420px; height: 250px;object-fit: cover;" />
@@ -69,55 +68,15 @@
             </div>
             <div class="form-group d-none">
                 <label for="booking_date">Booking Date:</label>
-                <input type="date" class="form-control" name="booking_date" id="booking_date" value="{{ date('Y-m-d') }}">
+                <input type="date" class="form-control" name="booking_date" id="booking_date" value="{{ date('Y-m-d') }}" required>
             </div>
             <div class="form-group d-none">
                 <label for="status">Status:</label>
-                <input type="number" class="form-control" name="status" id="status" value="Pending" required>
+                <input type="number" class="form-control" name="status" id="status" value="1" required>
             </div>
             <div class="form-group d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary mb-5">Submit</button>
             </div>
         </form>
-
-
-
-        <h4 class="pb-1 mb-3 fw-bold">My Activity</h4>
-        <!-- Driver -->
-        <div class="card">
-            <div class="table-responsive text-nowrap">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Vehicle</th>
-                            <th>Category</th>
-                            <th>Driver</th>
-                            <th>Agreement</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Toyota</strong></td>
-                            <td>Owned by Company</td>
-                            <td>Albert Cook</td>
-                            <td>Albert Cook</td>
-                            <td>
-                                <span class="badge bg-label-primary me-1">Active</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="table-border-bottom-0">
-                        <tr>
-                            <th>Vehicle</th>
-                            <th>Category</th>
-                            <th>Driver</th>
-                            <th>Agreement</th>
-                            <th>Status</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
     </div>
     @include('admin.foot')

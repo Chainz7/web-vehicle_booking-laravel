@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\MasterVehicle;
+use App\Models\Driver;
+use App\Models\Approver;
 use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
 
 class VehicleBookingController extends Controller
 {
+    public function index()
+    {
+        $vehicleBookings = VehicleBooking::with(['user', 'masterVehicle', 'driver', 'approver'])
+
+            ->get();
+        return view('admin/pages/history', compact('vehicleBookings'));
+    }
     public function store(Request $request)
     {
         $vehiclebooking = new VehicleBooking();

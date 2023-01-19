@@ -4,10 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // ROUTES
-Route::get('/', function () {
-    return view('login');
-});
-
+Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard.index');
 // ROUTES ADMIN
 Route::prefix('/admin')->group(function () {
     Route::get('', function () {
@@ -22,6 +19,11 @@ Route::prefix('/admin')->group(function () {
     Route::get('/approver', 'App\Http\Controllers\ApproverController@index')->name('approver.index');
     Route::get('/approver/choose/{id}', 'App\Http\Controllers\ApproverController@chooseApprover')->name('approver.choose');
     Route::get('/monitoring', 'App\Http\Controllers\MonitoringController@index')->name('monitoring.index');
-    
+    Route::get('/booking', 'App\Http\Controllers\VehicleBookingController@index')->name('booking.index');
     Route::post('/vehiclebooking', 'App\Http\Controllers\VehicleBookingController@store')->name('vehiclebooking.store');
 });
+// ROUTES APPROVER
+Route::prefix('/approver')->group(function () {
+    Route::get('', function () {
+        return view('approver.index');
+    });

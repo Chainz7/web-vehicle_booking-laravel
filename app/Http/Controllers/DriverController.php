@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Driver;
+use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
 
 class DriverController extends Controller
@@ -17,4 +18,5 @@ class DriverController extends Controller
         session(['chosen_driver' => $id]);
         return redirect()->route('approver.index');
     }
+
 }

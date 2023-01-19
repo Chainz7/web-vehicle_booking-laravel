@@ -10,4 +10,8 @@ class Driver extends Model
     use HasFactory;
 
     protected $hidden = [];
+    public function vehicleBookings()
+    {
+        return $this->hasMany(VehicleBooking::class);
+    }
 }

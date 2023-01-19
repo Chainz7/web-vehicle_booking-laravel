@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
 
 class ApproverController extends Controller
@@ -17,4 +18,5 @@ class ApproverController extends Controller
         session(['chosen_approver' => $id]);
         return redirect()->route('monitoring.index');
     }
+
 }

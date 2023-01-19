@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MasterVehicle;
+use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
 
 class MasterVehicleController extends Controller

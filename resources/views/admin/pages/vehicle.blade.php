@@ -34,7 +34,7 @@
                             Available :
                             @if($vehicle->is_available == true)
                             <span class="badge bg-label-primary me-1">YES</span>
-                            @elseif(date_create($vehicle->service_schedule) < date_create()) <span class="badge bg-label-danger me-1">NO || NEED SERVICE</span>
+                            @elseif(date_create($vehicle->service_schedule) < date_create()) <span class="badge bg-label-danger me-1">SERVICE</span>
                                 @else
                                 <span class="badge bg-label-danger me-1">NO</span>
                                 @endif
@@ -45,7 +45,7 @@
                             @else
                             <a href="{{ route('vehicle.choose', $vehicle->id) }}" class="btn btn-primary">Choose</a>
                             @endif
-                            <span class="badge bg-label-primary"><strong>{{ $vehicle->booking_count }}</strong> Booked</span>
+
                     </div>
                 </div>
             </div>
