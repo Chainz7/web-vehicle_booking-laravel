@@ -4,11 +4,15 @@ use Illuminate\Support\Facades\Route;
 
 
 // ROUTES
-Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard.index');
+Route::get('/', 'App\Http\Controllers\LoginController@index')->name('login.index');
+Route::post('/login', 'App\Http\Controllers\LoginController@login')->name('login.login');
+Route::get('/register', 'App\Http\Controllers\RegisterController@index')->name('register.index');
+Route::post('/register/create', 'App\Http\Controllers\RegisterController@store')->name('register.store');
 // ROUTES ADMIN
+
 Route::prefix('/admin')->group(function () {
     Route::get('', function () {
-        return view('admin.index');
+        return view('/resources/views/admin/index.blade.php');
     });
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard.index');
     Route::get('/dashboard/choose/{id}', 'App\Http\Controllers\DashboardController@chooseDashboard')->name('dashboard.choose');
@@ -22,8 +26,3 @@ Route::prefix('/admin')->group(function () {
     Route::get('/booking', 'App\Http\Controllers\VehicleBookingController@index')->name('booking.index');
     Route::post('/vehiclebooking', 'App\Http\Controllers\VehicleBookingController@store')->name('vehiclebooking.store');
 });
-// ROUTES APPROVER
-Route::prefix('/approver')->group(function () {
-    Route::get('', function () {
-        return view('approver.index');
-    });

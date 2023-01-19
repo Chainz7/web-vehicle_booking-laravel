@@ -109,4 +109,3 @@
           <!-- Navbar -->
         @include('admin.navbar')
         <!--  / Navbar -->
-
