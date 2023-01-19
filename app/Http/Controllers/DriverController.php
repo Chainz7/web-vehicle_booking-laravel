@@ -18,5 +18,4 @@ class DriverController extends Controller
         session(['chosen_driver' => $id]);
         return redirect()->route('approver.index');
     }
-
 }

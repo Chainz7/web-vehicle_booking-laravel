@@ -15,7 +15,7 @@
                 <p class="card-text">4. Select an approver</p>
                 <p class="card-text">5. Submit on the monitoring page</p>
                 <p class="card-text">6. View history</p>
-                <a href="{{ route('dashboard.choose', $user->id) }}" class="btn btn-primary">Choose</a>
+                <!-- <a href="{{ route('dashboard.choose', Auth::user()->id) }}" class="btn btn-primary">Choose</a> -->
               </div>
               </li>
               </ul>

@@ -1,12 +1,18 @@
 @include('admin.head')
 <div class="content-wrapper">
     <div class="container-xxl container-p-y">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            Please Choose a Vehicle First
+        </div>
+        @endif
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Vehicles</h4>
         @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
         @endif
+
         <div class="row mb-5">
             @foreach($vehicles as $vehicle)
             <div class="col-6 col-md-4 col-lg-3 mb-3">

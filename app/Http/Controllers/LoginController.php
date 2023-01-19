@@ -17,7 +17,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('dashboard.index');
+            return redirect()->intended('admin');
         }
 
         return redirect()->back()->withInput()->withErrors(['username' => 'Username atau password salah']);
@@ -25,6 +25,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        session()->flush();
+        return redirect('/');
     }
 }

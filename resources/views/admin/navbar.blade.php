@@ -25,9 +25,11 @@
 
       <!-- User -->
       <a href="#" class="btn btn-primary">Login</a>
-      <form method="POST" action="{{ route('logout') }}">
+      <form method="POST" action="{{ route('login.logout') }}">
         @csrf
         <button type="submit" class="btn btn-danger">Logout</button>
+        <!-- <h1>Selamat datang, {{ Auth::user()->username }}</h1> -->
+
       </form>
 
       <!-- <li class="nav-item navbar-dropdown dropdown-user dropdown">

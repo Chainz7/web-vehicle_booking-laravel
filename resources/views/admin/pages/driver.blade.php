@@ -1,6 +1,11 @@
 @include('admin.head')
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            Please Choose Driver
+        </div>
+        @endif
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Drivers</h4>
         <div class="col mb-5">
             @foreach($drivers as $driver)
