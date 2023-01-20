@@ -13,13 +13,25 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
-        'fullanem',
         'username',
+        'fullname',
         'role_id',
         'profile_picture_url'
     ];
 
     protected $hidden = [
-        'password',
+        'password', 'remember_token',
     ];
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+    public function vehicleBookings()
+    {
+        return $this->hasMany(VehicleBooking::class);
+    }
+    public function scopeApprovers($query)
+    {
+        return $query->where('role_id', 2);
+    }
 }

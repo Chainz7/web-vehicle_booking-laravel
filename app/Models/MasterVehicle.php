@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class MasterVehicle extends Model
 {
-    use HasFactory;
 
+    use HasFactory;
     protected $table = 'master_vehicle';
     protected $hidden = [];
+    public function vehicleBookings()
+    {
+        return $this->hasMany(VehicleBooking::class);
+    }
 }
