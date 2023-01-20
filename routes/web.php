@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 // ROUTES
 Route::get('/', 'App\Http\Controllers\LoginController@index')->name('login.index');
-Route::post('/login', 'App\Http\Controllers\LoginController@login')->name('login.login');
+Route::post('/login/auth', 'App\Http\Controllers\LoginController@login')->name('login.login');
 Route::post('/logout', 'App\Http\Controllers\LoginController@logout')->name('login.logout');
 Route::get('/register', 'App\Http\Controllers\RegisterController@index')->name('register.index');
 Route::post('/register/create', 'App\Http\Controllers\RegisterController@store')->name('register.store');
@@ -19,6 +19,8 @@ Route::post('/register/create', 'App\Http\Controllers\RegisterController@store')
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
         Route::redirect('/', '/admin/dashboard');
+        Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
+        Route::post('/profileUpdate', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
         Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard.index');
         Route::get('/dashboard/choose/{id}', 'App\Http\Controllers\DashboardController@chooseDashboard')->name('dashboard.choose');
         Route::get('/vehicle', 'App\Http\Controllers\MasterVehicleController@index')->name('vehicle.index');

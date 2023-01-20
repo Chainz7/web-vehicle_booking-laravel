@@ -8,14 +8,14 @@ use App\Models\Driver;
 use App\Models\Approver;
 use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VehicleBookingController extends Controller
 {
     public function index()
     {
-        $vehicleBookings = VehicleBooking::with(['user', 'masterVehicle', 'driver', 'approver'])
-
-            ->get();
+        $user_id = Auth::user()->id;
+        $vehicleBookings = VehicleBooking::with(['user', 'masterVehicle', 'driver', 'approver'])->where('submitter_id', $user_id)->get();
         return view('admin/pages/history', compact('vehicleBookings'));
     }
     public function store(Request $request)
@@ -28,6 +28,7 @@ class VehicleBookingController extends Controller
         $vehiclebooking->booking_date = $request->booking_date;
         $vehiclebooking->status = $request->status;
         $vehiclebooking->save();
-        return redirect()->back()->withSuccess('Successfully added new vehicle booking');
+        session()->forget(['chosen_vehicle', 'chosen_driver', 'chosen_approver']);
+        return redirect()->route('booking.index')->withSuccess('Successfully added new vehicle booking');
     }
 }

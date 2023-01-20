@@ -34,13 +34,6 @@ class RegisterController extends Controller
         $user->role_id = $request->role_id;
         $user->profile_picture_url = $request->profile_picture_url;
         $user->save();
-        // User::create([
-        //     'fullname' => $request->fullname,
-        //     'username' => $request->username,
-        //     'password' => Hash::make($request->password),
-        //     'role_id' => $request->role_id,
-        //     'profile_picture_url' => $request->profile_picture_url
-        // ]);
 
         // Redirect ke halaman profil
         return redirect()->route('login.index');

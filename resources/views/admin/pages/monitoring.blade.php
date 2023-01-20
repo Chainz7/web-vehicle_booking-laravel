@@ -2,10 +2,6 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pages /</span> Monitoring</h4>
-        <!-- {{$chosen_user}}
-        {{$chosen_vehicle}}
-        {{$chosen_driver}}
-        {{$chosen_approver}} -->
         <div class="card-group mb-5">
             <div class="card">
                 <img class="card-img-top" src="{{ $chosen_vehicle->vehicle_picture_url }}" style="width: 420px; height: 250px;object-fit: cover;" />
