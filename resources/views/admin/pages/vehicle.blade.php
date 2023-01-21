@@ -30,7 +30,10 @@
                             Fuel Consume : <span class="badge bg-label-primary me-1">{{ $vehicle->fuel_consume }}/Km</span>
                         </p>
                         <p class="card-text">
-                            Service Schedule :
+                            Booking Count : <span class="badge bg-label-primary me-1">{{ $vehicle->booking_count }} Times</span>
+                        </p>
+                        <p class="card-text">
+                            Service :
                             @if(date_create($vehicle->service_schedule) < date_create())<span class="badge bg-label-warning me-1">{{ date_format(date_create($vehicle->service_schedule), 'd M Y') }}</span>
                                 @else
                                 <span class="badge bg-label-primary me-1">{{ date_format(date_create($vehicle->service_schedule), 'd M Y') }}</span>

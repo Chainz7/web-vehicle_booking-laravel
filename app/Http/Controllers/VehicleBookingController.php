@@ -28,6 +28,10 @@ class VehicleBookingController extends Controller
         $vehiclebooking->booking_date = $request->booking_date;
         $vehiclebooking->status = $request->status;
         $vehiclebooking->save();
+
+        $vehiclecount = MasterVehicle::where('id', $request->vehicle_id)->first();
+        $vehiclecount->booking_count += 1;
+        $vehiclecount->save();
         session()->forget(['chosen_vehicle', 'chosen_driver', 'chosen_approver']);
         return redirect()->route('booking.index')->withSuccess('Successfully added new vehicle booking');
     }
