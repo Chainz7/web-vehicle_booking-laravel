@@ -29,4 +29,16 @@ class VehicleBooking extends Model
     {
         return $this->belongsTo(User::class, 'approver_id')->where('role_id', 2);
     }
+    public function vehicleDashboard()
+    {
+        return $this->belongsTo(MasterVehicle::class, 'vehicle_id');
+    }
+    public function driverDashboard()
+    {
+        return $this->belongsTo(Driver::class, 'driver_id');
+    }
+    public function approverDashboard()
+    {
+        return $this->belongsTo(User::class, 'approver_id')->where('role_id', 2);
+    }
 }
