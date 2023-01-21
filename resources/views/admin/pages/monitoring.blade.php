@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h4 class="card-title"><strong>Vehicle</strong></h4>
                     <p class="card-text">
-                        <strong>Name: <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->name }}</span></strong>
+                        <strong>Name: <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->booking_count }}</span></strong>
                     </p>
                     <p class="card-text">
                         <strong>Type : <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->vehicle_type }}</span></strong>
