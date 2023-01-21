@@ -11,17 +11,22 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('admin');
+            $user = Auth::user();
+            if ($user->role_id == 1) {
+                return redirect()->intended('admin');
+            } elseif ($user->role_id == 2) {
+                return redirect()->intended('approver');
+            }
         }
-
         return redirect()->back()->withInput()->withErrors(['username' => 'Username atau password salah']);
     }
+
     public function logout()
     {
         Auth::logout();
