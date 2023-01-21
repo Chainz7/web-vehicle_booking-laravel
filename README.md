@@ -32,3 +32,5 @@
 -   No dashboard for vehicle usage graphics
 -   No periodic reports
 -   No approval from approver.
+
+/composer require spatie/laravel-permission
