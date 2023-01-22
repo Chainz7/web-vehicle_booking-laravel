@@ -15,7 +15,7 @@ class VehicleBookingController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $vehicleBookings = VehicleBooking::with(['user', 'masterVehicle', 'driver', 'approver'])->where('submitter_id', $user_id)->get();
+        $vehicleBookings = VehicleBooking::where('submitter_id', $user_id)->get();
         return view('admin/pages/history', compact('vehicleBookings'));
     }
     public function store(Request $request)

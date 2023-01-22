@@ -12,6 +12,10 @@ class VehicleBooking extends Model
 
     public function user()
     {
+        return $this->belongsTo(User::class);
+    }
+    public function userSubmitter()
+    {
         return $this->belongsTo(User::class, 'submitter_id');
     }
 
@@ -36,9 +40,5 @@ class VehicleBooking extends Model
     public function driverDashboard()
     {
         return $this->belongsTo(Driver::class, 'driver_id');
-    }
-    public function approverDashboard()
-    {
-        return $this->belongsTo(User::class, 'approver_id')->where('role_id', 2);
     }
 }

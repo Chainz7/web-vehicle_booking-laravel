@@ -25,7 +25,7 @@
                         @foreach($vehicleBookings as $vehicleBooking)
                         <tr>
                             <td><strong><span class="fab fa-angular fa-lg text-primary me-3">{{ $vehicleBooking->masterVehicle->name }}</span></strong></td>
-                            <td>{{ $vehicleBooking->user->fullname }}</td>
+                            <td>{{ Auth::user()->fullname }}</td>
                             <td>{{ $vehicleBooking->driver->fullname }}</td>
                             <td>{{ $vehicleBooking->approver->fullname }}</td>
                             <td>{{ $vehicleBooking->booking_date }}</td>

@@ -21,6 +21,9 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('approver')->group(function () {
             Route::redirect('/', '/approver/dashboard')->name('approver.index');
             Route::get('/dashboard', 'App\Http\Controllers\DashboardController@indexApprover')->name('dashboardApprover.index');
+            Route::get('/approve', 'App\Http\Controllers\ApproverController@indexApprover')->name('approveApprover.index');
+            Route::post('/approve/storeApprover', 'App\Http\Controllers\ApproverController@storeApprover')->name('approveApprover.store');
+            Route::post('/approve/rejectApprover', 'App\Http\Controllers\ApproverController@rejectApprover')->name('approveApprover.reject');
         });
     });
 

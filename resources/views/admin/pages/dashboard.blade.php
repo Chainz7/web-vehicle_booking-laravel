@@ -163,7 +163,7 @@
                         <h6 class="mb-0">{{$order->vehicleDashboard->name }}</h6>
                       </div>
                       <div class="user-progress d-flex align-items-center gap-1">
-                        <h6 class="mb-0">{{$order->approverDashboard->fullname }}</h6>
+                        <h6 class="mb-0">{{$order->approver->fullname }}</h6>
                       </div>
                     </div>
                   </li>

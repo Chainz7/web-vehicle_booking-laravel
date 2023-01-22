@@ -17,13 +17,13 @@
                     <p class="mb-4">
                       You have <span class="fw-bold">
                         @if($latestVehicleBooking == true)
-                        {{$total_orders}}
+                        {{$total_done_orders}}
                         @else
                         0
                         @endif
                       </span> Booking Order
                     </p>
-                    <a href="{{ route('booking.index') }}" class="btn btn-sm btn-outline-primary">View History</a>
+                    <a href="{{ route('approveApprover.index') }}" class="btn btn-sm btn-outline-primary">Need to Approve</a>
                   </div>
                 </div>
                 <div class="col-sm-5 text-center text-sm-left">
@@ -113,7 +113,7 @@
                         <h6 class="mb-0">{{$order->vehicleDashboard->name }}</h6>
                       </div>
                       <div class="user-progress d-flex align-items-center gap-1">
-                        <h6 class="mb-0">{{$order->user->fullname }}</h6>
+                        <h6 class="mb-0">{{$order->userSubmitter->fullname }}</h6>
                       </div>
                     </div>
                   </li>

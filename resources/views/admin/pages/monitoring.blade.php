@@ -17,7 +17,7 @@
                         <strong>Ownership: <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->vehicle_ownership == 0 ? 'Owned' : 'Rent' }}</span></strong>
                     </p>
                     <p class="card-text">
-                        <strong>Fuel Consume : <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->fuel_consume }}</span></strong>
+                        <strong>Fuel Consume : <span class="badge bg-label-primary me-1">{{ $chosen_vehicle->fuel_consume }}/KM</span></strong>
                     </p>
                     <p class="card-text">
                         <strong>Service Schedule : <span class="badge bg-label-primary me-1">{{ date_format(date_create($chosen_vehicle->service_schedule), 'd M Y') }}</span></strong>

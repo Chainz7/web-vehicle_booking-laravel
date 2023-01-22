@@ -35,8 +35,9 @@ class DashboardController extends Controller
         $user_id = Auth::user()->id;
         $orders = VehicleBooking::where('approver_id', $user_id)->get();
         $total_orders = VehicleBooking::where('approver_id', $user_id)->count();
+        $total_done_orders = VehicleBooking::where('approver_id', $user_id)->where('status', 1)->count();
         $latestVehicleBooking = VehicleBooking::where('approver_id', $user_id)->where('status', 1)->latest()->first();
         // check if user has pending vehicle booking
-        return view('approver/pages/dashboard', compact('orders', 'total_orders', 'latestVehicleBooking'));
+        return view('approver/pages/dashboard', compact('orders', 'total_orders', 'total_done_orders', 'latestVehicleBooking'));
     }
 }

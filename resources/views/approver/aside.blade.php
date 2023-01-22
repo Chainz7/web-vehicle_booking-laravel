@@ -45,7 +45,7 @@
   <div class="menu-inner-shadow"></div>
   <ul class="menu-inner py-1">
     <li class="menu-item">
-      <a href="{{ route('dashboard.index') }}" class="menu-link">
+      <a href="{{ route('dashboardApprover.index') }}" class="menu-link">
         <i class="menu-icon tf-icons"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
@@ -54,13 +54,13 @@
       </a>
     </li>
     <li class="menu-item">
-      <a href="{{ route('monitoring.index') }}" class="menu-link">
+      <a href="{{ route('approveApprover.index') }}" class="menu-link">
         <i class="menu-icon tf-icons"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
           </svg>
 
         </i>
-        <div data-i18n="Basic" style="margin-top: .4rem;">Monitoring</div>
+        <div data-i18n="Basic" style="margin-top: .4rem;">Approve</div>
       </a>
     </li>
     <li class="menu-item">
