@@ -35,4 +35,10 @@ class VehicleBookingController extends Controller
         session()->forget(['chosen_vehicle', 'chosen_driver', 'chosen_approver']);
         return redirect()->route('booking.index')->withSuccess('Successfully added new vehicle booking');
     }
+    public function indexApprover()
+    {
+        $user_id = Auth::user()->id;
+        $vehicleBookings = VehicleBooking::where('approver_id', $user_id)->get();
+        return view('approver/pages/history', compact('vehicleBookings'));
+    }
 }

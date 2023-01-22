@@ -24,7 +24,7 @@
                 </div>
                 <div class="flex-grow-1">
                   <span class="fw-semibold d-block">{{ Auth::user()->username }}</span>
-                  <small class="text-muted">Admin</small>
+                  <small class="text-muted">Approver</small>
                 </div>
               </div>
             </div>
