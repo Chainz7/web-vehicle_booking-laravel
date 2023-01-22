@@ -33,15 +33,10 @@ class DashboardController extends Controller
     public function indexApprover()
     {
         $user_id = Auth::user()->id;
-        $vehicles = MasterVehicle::all();
-        $total_vehicles = MasterVehicle::count();
-        $total_vehicles_booking = MasterVehicle::sum('booking_count');
-        $drivers = Driver::all();
-        $total_drivers = Driver::count();
-        $approvers = User::where('role_id', 2)->get();
-        $total_approvers = User::where('role_id', 2)->count();
-        $orders = VehicleBooking::where('submitter_id', $user_id)->get();
-        $total_orders = VehicleBooking::where('submitter_id', $user_id)->count();
-        return view('approver/pages/dashboard', compact('vehicles', 'total_vehicles', 'total_vehicles_booking', 'drivers', 'total_drivers', 'approvers', 'total_approvers', 'orders', 'total_orders'));
+        $orders = VehicleBooking::where('approver_id', $user_id)->get();
+        $total_orders = VehicleBooking::where('approver_id', $user_id)->count();
+        $latestVehicleBooking = VehicleBooking::where('approver_id', $user_id)->where('status', 1)->latest()->first();
+        // check if user has pending vehicle booking
+        return view('approver/pages/dashboard', compact('orders', 'total_orders', 'latestVehicleBooking'));
     }
 }
