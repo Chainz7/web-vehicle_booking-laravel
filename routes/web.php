@@ -22,8 +22,3 @@ Route::prefix('/admin')->group(function () {
     Route::get('/booking', 'App\Http\Controllers\VehicleBookingController@index')->name('booking.index');
     Route::post('/vehiclebooking', 'App\Http\Controllers\VehicleBookingController@store')->name('vehiclebooking.store');
 });
-// ROUTES APPROVER
-Route::prefix('/approver')->group(function () {
-    Route::get('', function () {
-        return view('approver.index');
-    });

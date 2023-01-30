@@ -14,7 +14,7 @@ class VehicleBookingController extends Controller
     public function index()
     {
         $vehicleBookings = VehicleBooking::with(['user', 'masterVehicle', 'driver', 'approver'])
-
+            ->latest()
             ->get();
         return view('admin/pages/history', compact('vehicleBookings'));
     }
