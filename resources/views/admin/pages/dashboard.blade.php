@@ -109,13 +109,12 @@
                     <h2 class="mb-2">{{ $total_orders }}</h2>
                     <span>Total Booked</span>
                   </div>
-                  <div id="orderStatisticsChart"></div>
                 </div>
                 <ul class="p-0 m-0">
                   @foreach($orders as $order)
                   <li class="d-flex mb-4 pb-1">
                     <div class="avatar flex-shrink-0 me-3">
-                      <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-mobile-alt"></i></span>
+                      <span class="avatar-initial rounded bg-label-primary"><i class="bx bx-info-alt"></i></span>
                     </div>
                     <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                       <div class="me-2">
@@ -155,7 +154,7 @@
                   @foreach ($orders as $order)
                   <li class="d-flex mb-4 pb-1">
                     <div class="avatar flex-shrink-0 me-3">
-                      <img src="{{ asset('css/img/icons/unicons/paypal.png') }}" alt="User" class="rounded" />
+                      <img src="{{ asset('css/img/icons/unicons/chart.png') }}" alt="User" class="rounded" />
                     </div>
                     <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                       <div class="me-2">
