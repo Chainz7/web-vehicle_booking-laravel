@@ -7,7 +7,7 @@
 
 ## Instalation Database
 
-1.   Migrate tables 'php artisan migrate'
+1.   Migrate database 'php artisan migrate'
 2.   Seed database 'php artisan db:seed'
 
 ## Usage
