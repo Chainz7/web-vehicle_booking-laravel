@@ -7,9 +7,8 @@
 
 ## Instalation Database
 
-1.   Create a database named 'vehicle_order'
-2.   Migrate tables 'php artisan migrate'
-3.   Seed database 'php artisan db:seed'
+1.   Migrate tables 'php artisan migrate'
+2.   Seed database 'php artisan db:seed'
 
 ## Usage
 
