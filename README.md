@@ -23,7 +23,7 @@
 9.   Approve the order by admin
 10.   History
 
-## Pages
+## Preview
 ![DD](https://i.ibb.co/fk4WBBw/V1.png)
 ![DD](https://i.ibb.co/5vbwD6g/V2.png)
 ![DD](https://i.ibb.co/jv5dzcb/V3.png)
